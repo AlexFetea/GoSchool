@@ -2,13 +2,22 @@
   html{
   font-size=15px;
 }
-#main{
+
+#header{
+  font-family: monospace;
+  font-size: 50px;
+  font-style: italic;
+  padding: 30px;
+  text-align: center;
+  background: gray;
+}
+#body{
   display: flex;
 }
 #profile{
   display: flex;
   flex-direction: column;
-  background: red;
+  background: hsl(0 0% 65%);
   height: 100%;
   width: 20%;
   text-align:center;
@@ -87,10 +96,22 @@ input:checked + .slider:before {
 }
 
 #message-panel{
-  background: green;
+  background: rgb(245, 245, 220);
   width: 60%;
   display: flex;
   flex-direction: column;
+}
+#message-number{
+  display: flex;
+  margin-bottom: 20px;
+}
+#message{
+  width: 90%;
+}
+#person-pic{
+  width: 10%;
+  height: auto;
+  border-radius: 100%;
 }
 
 .line{
@@ -98,54 +119,73 @@ input:checked + .slider:before {
   background: gray;
 }
 #voice-channels{
-  background: blue;
+  background: hsl(0 0% 65%);
   width: 20%;
   display: flex;
   flex-direction: column;
 }
 </style>
 <main id="main">
-  <div id="profile">
-    <h1>Profile</h1>
-    <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
-    <h2>PersonName</h2>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-    <h2>Synchronize UVA-SIS Classes
-      <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
-    </h2>
+  <div id="header">GoSchool
   </div>
-  <div id="message-panel">
-    <h1>Messages</h1>
-    <div id="message">
+  <div id="body">
+    <div id="profile">
+      <h1>Profile</h1>
+      <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
       <h2>PersonName</h2>
-      <p>LastText</p>
-      <hr class="line" />
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <h2>Synchronize UVA-SIS Classes
+        <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
+      </h2>
     </div>
-    <div id="message">
-      <h2>PersonName</h2>
-      <p>LastText</p>
-      <hr class="line" />
+    <div id="message-panel">
+      <h1>Messages</h1>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
     </div>
-    <div id="message">
-      <h2>PersonName</h2>
-      <p>LastText</p>
-      <hr class="line" />
+    <div id="voice-channels">
+      <h1>Voice Channels</h1>
     </div>
-    <div id="message">
-      <h2>PersonName</h2>
-      <p>LastText</p>
-      <hr class="line" />
-    </div>
-    <div id="message">
-      <h2>PersonName</h2>
-      <p>LastText</p>
-      <hr class="line" />
-    </div>
-  </div>
-  <div id="voice-channels">
-    <h1>Voice Channels</h1>
-  </div>
-  <main>
+    </body>
+    <main>
