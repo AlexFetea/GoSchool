@@ -1,214 +1,151 @@
 <style>
   html{
-  font-size: 15px;
+  font-size=15px;
 }
 #main{
-  margin: auto;
-}
-#logo{
   display: flex;
 }
-
-#header{
-  background-color: gray;
+#profile{
   display: flex;
-  
-}
-#trombone{
-  width: auto;
-  height: 40px;
-  margin: 20px auto 20px 10px;
-}
-#title{
-  margin: auto auto auto 20px;
-  color: gold;
-  font-style: italic;
-  font-family: calibri;
-  text-shadow: black 1px 0 10px;
-}
-#links{
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-}
-.link{
-  color: gold;
-  font-size:  25px;
-  font-family: calibri;
-  text-shadow: black 1px 0 10px;
-  margin: 25px 20px 10px 0px;
-  text-decoration: none;
-}
-@media (min-width: 1200px){
-  .link{
-    margin-right: 150px;
-  }
-}
-
-#email-menu{
-  display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  background: red;
+  height: 100%;
+  width: 20%;
+  text-align:center;
 }
 h1{
+  font-size: 30px;
   font-family: monospace;
-  text-align: center;
+  margin: 0px auto 0px auto;
 }
-#form{
+#profile-pic{
+  height: auto;
+  width: 50%;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(66px);
+  -ms-transform: translateX(66px);
+  transform: translateX(66px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#message-panel{
+  background: green;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  color: white;
-  margin-bottom: 10px;
 }
-#email{
-  margin: auto;
-  margin-bottom: 20px;
-  width: 400px;
-  height:  30px;
-}
-.btn{
-  margin: auto;
-  text-transform: uppercase;
+
+.line{
+  border: 1px solid gray;
   background: gray;
-  color: gold;
-  font-size:  20px;
-  font-family: calibri;
-  text-shadow: black 1px 0 10px;
-  padding: 10px;
 }
-#information{
-  background-color: rgba(20, 78, 155, 0.6);
-  border-radius: 0.25rem;
-  padding: 10px 10px 10px 10px;
-  margin: auto;
-  margin-top: 50px;
-  display: grid;
-  flex-wrap: wrap;
-  grid-template-columns: .5fr 3fr;
-  row-gap: 25px;
-}
-@media (min-width: 576px) {
-  #information {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  #information {
-    max-width: 720px;
-  }
-}
-@media (min-width: 1068px) {
-  #information {
-    max-width: 1020px;
-  }
-}
-#fire{
-  display: block;
-  margin: auto;
-  margin-right: px;
-  width: auto;
-  height: 50px;
-}
-#car{
-  display: block;
-  margin: auto;
-  width: auto;
-  height: 50px;
-}
-#quality{
-  display: block;
-  margin: auto;
-  width: auto;
-  height: 50px;
-}
-.row{
+#voice-channels{
+  background: blue;
+  width: 20%;
   display: flex;
   flex-direction: column;
-  row-gap: 0px;
 }
-h2{
-  margin-top: auto;
-  margin-bottom: auto;
-  color: black;
-
-}
-p{
-  margin-top: auto;
-  margin-bottom: auto;
-  color: black;
-}
-#video{
-  display: flex;
-  width: 1000px;
-  height: 600px;
-  margin: auto;
-  margin-top: 100px;
-}
-@media (min-width: 576px) {
-  #video {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  #video {
-    max-width: 720px;
-  }
-}
-@media (min-width: 1068px) {
-  #video {
-    max-width: 1020px;
-  }
-}
-  </style>
-  
+</style>
 <main id="main">
-  <header id="header">
-    <div id="logo">
-      <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/16618/trombone-musical-instrument-clipart-xl.png" alt="Original Trombone Logo" id="trombone" />
-      <h1 id="title">Original Trombones</h1>
+  <div id="profile">
+    <h1>Profile</h1>
+    <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
+    <h2>PersonName</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <h2>Synchronize UVA-SIS Classes
+      <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
+    </h2>
+  </div>
+  <div id="message-panel">
+    <h1>Messages</h1>
+    <div id="message">
+      <h2>PersonName</h2>
+      <p>LastText</p>
+      <hr class="line" />
     </div>
-    <div id="links">
-      <a href="#information" id="features" class="link" name="features">Features</a>
-      <a href="Contact.html" id="how-it-works" class="link" name="how-it-works">Contact Information</a>
-      <a href="#" id="pricing" class="link" name="pricing">Pricing</a>
+    <div id="message">
+      <h2>PersonName</h2>
+      <p>LastText</p>
+      <hr class="line" />
     </div>
-  </header>
-
-  <body>
-    <div id="email-menu">
-      <h1 id="description">Handcrafted, home-made masterpieces</h1>
-      <form id="form" action="https://www.freecodecamp.com/email-submit">
-        <input id="email" name="email" type="email" placeholder="Enter your email address" required />
-        <input class="btn" id="submit" value="Get Started" type="submit" />
-      </form>
+    <div id="message">
+      <h2>PersonName</h2>
+      <p>LastText</p>
+      <hr class="line" />
     </div>
-    <div id="information">
-      <div>
-        <img src="https://www.kindpng.com/picc/m/34-344885_fire-transparent-background-flames-clipart-fire-hd-png.png" alt="Fire clip art" id="fire" />
-      </div>
-      <div class="row">
-        <h2>Premium Materials</h2>
-        <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
-      </div>
-      <div>
-
-        <img src="https://media.istockphoto.com/vectors/car-icon-black-minimalist-icon-isolated-on-white-background-vector-id855073082?k=20&m=855073082&s=612x612&w=0&h=_NW2jsVrqgvzCbSglqZSrZMz1k2zbyEA0-7K9OtxcdA=" alt="Car clip art" id="car" />
-      </div>
-      <div class="row">
-        <h2>Fast Shipping</h2>
-        <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
-      </div>
-      <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm--F74rn2noiFtlWdG8PEwZJF3aAYOzT2vYIkuW7Q4xMhCwqSGEAxw07lS9C8GqPhHfU&usqp=CAU" alt="Quality clip art" id="quality" />
-      </div>
-      <div class="row">
-        <h2>Quality Assurance</h2>
-        <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
-      </div>
+    <div id="message">
+      <h2>PersonName</h2>
+      <p>LastText</p>
+      <hr class="line" />
     </div>
-    <div>
-    <iframe id="video"
-src="https://www.youtube.com/embed/tgbNymZ7vqY" alt="link to youtube video">
-</iframe>
+    <div id="message">
+      <h2>PersonName</h2>
+      <p>LastText</p>
+      <hr class="line" />
     </div>
-  </body>
-</main>
+  </div>
+  <div id="voice-channels">
+    <h1>Voice Channels</h1>
+  </div>
+  <main>
