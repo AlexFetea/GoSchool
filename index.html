@@ -1,147 +1,163 @@
 <style>
-  html{
-  font-size=15px;
-}
+  html {
+    font-size=15px;
+  }
 
-#header{
-  font-family: monospace;
-  font-size: 50px;
-  font-style: italic;
-  padding: 30px;
-  text-align: center;
-  background: hsl(0 0% 5%);
-  color: white
-}
-#body{
-  display: flex;
-}
-#profile{
-  display: flex;
-  flex-direction: column;
-  background: rgb(141 216 211);
-  height: 100%;
-  width: 20%;
-  text-align:center;
-  padding-top: 10px;
-}
-h1{
-  font-size: 30px;
-  font-family: monospace;
-  margin: 0px auto 0px auto;
-}
-#profile-pic{
-  height: auto;
-  width: 50%;
-  border-radius: 100%;
-  margin: auto;
-  margin-top: 1rem;
-}
+  #header {
+    font-family: monospace;
+    font-size: 50px;
+    font-style: italic;
+    padding: 30px;
+    text-align: center;
+    background: hsl(0 0% 5%);
+    color: white
+  }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 34px;
-  margin: auto;
-  margin-top: 20px;
-}
+  #body {
+    display: flex;
+  }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  #profile {
+    display: flex;
+    flex-direction: column;
+    background: rgb(141 216 211);
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    padding-top: 10px;
+  }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  h1 {
+    font-size: 30px;
+    font-family: monospace;
+    margin: 0px auto 0px auto;
+  }
 
-input:checked + .slider {
-  background-color: green;
-}
+  #profile-pic {
+    height: auto;
+    width: 50%;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 1rem;
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    margin: auto;
+    margin-top: 20px;
+  }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(66px);
-  -ms-transform: translateX(66px);
-  transform: translateX(66px);
-}
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-.slider.round {
-  border-radius: 34px;
-}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
 
-.slider.round:before {
-  border-radius: 50%;
-}
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
 
-#message-panel{
-  padding-top: 10px;
-  background: rgb(245, 245, 220);
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
-#message-number{
-  display: flex;
-  margin-bottom: 20px;
-}
-#message{
-  width: 90%;
-}
-#person-pic{
-  padding: auto;
-  padding: 10px;
-  width: 10%;
-  height: auto;
-  border-radius: 100%;
-}
+  input:checked+.slider {
+    background-color: green;
+  }
 
-.line{
-  border: 1px solid gray;
-  background: gray;
-}
-#voice-channels{
-  padding-top: 10px;
-  background: rgb(141 216 211);
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-}
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(66px);
+    -ms-transform: translateX(66px);
+    transform: translateX(66px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  #message-panel {
+    padding-top: 10px;
+    background: rgb(245, 245, 220);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #message-number {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  #message {
+    width: 90%;
+  }
+
+  #person-pic {
+    padding: auto;
+    padding: 10px;
+    width: 10%;
+    height: auto;
+    border-radius: 100%;
+  }
+
+  .line {
+    border: 1px solid gray;
+    background: gray;
+  }
+
+  #voice-channels {
+    padding-top: 10px;
+    background: rgb(141 216 211);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
 </style>
 
 <main id="main">
-   <title>GoSchool</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <title>GoSchool</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <div id="header">GoSchool
   </div>
   <div id="body">
     <div id="profile">
       <h1>Profile</h1>
       <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
-      <h2>PersonName</h2>
+      <h2>Alex</h2>
       <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
@@ -155,7 +171,7 @@ input:checked + .slider:before {
       <div id="message-number">
         <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
         <div id="message">
-          <h2>PersonName</h2>
+          <a href="#">STS-1500</a>
           <p>LastText</p>
           <hr class="line" />
         </div>
@@ -163,7 +179,7 @@ input:checked + .slider:before {
       <div id="message-number">
         <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
         <div id="message">
-          <h2>PersonName</h2>
+          <a href="#">APMA-2120</a>
           <p>LastText</p>
           <hr class="line" />
         </div>
@@ -171,7 +187,7 @@ input:checked + .slider:before {
       <div id="message-number">
         <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
         <div id="message">
-          <h2>PersonName</h2>
+          <a href="#">CS-1110</a>
           <p>LastText</p>
           <hr class="line" />
         </div>
@@ -179,7 +195,7 @@ input:checked + .slider:before {
       <div id="message-number">
         <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
         <div id="message">
-          <h2>PersonName</h2>
+          <a href="#">ENGR-1624</a>
           <p>LastText</p>
           <hr class="line" />
         </div>
@@ -187,7 +203,7 @@ input:checked + .slider:before {
       <div id="message-number">
         <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
         <div id="message">
-          <h2>PersonName</h2>
+          <a href="#">ECON-2020</a>
           <p>LastText</p>
           <hr class="line" />
         </div>
@@ -197,4 +213,4 @@ input:checked + .slider:before {
       <h1>Voice Channels</h1>
     </div>
     </body>
-    <main>
+</main>
