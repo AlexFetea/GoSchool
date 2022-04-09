@@ -1,9 +1,14 @@
+<!DOCTYPE html>
 <style>
-  html{
-  font-size=15px;
+* {
+  box-sizing: border-box; /* use traditional box model sizing */
 }
-  
-  /* Bordered form */
+
+/* hide other screens when app first starts */
+#screen2 {
+	display: none;
+}
+
 form {
   border: 3px solid #f1f1f1;
 }
@@ -204,93 +209,113 @@ input:checked + .slider:before {
 }
 </style>
 
+<html>
+<title>GoSchool</title>
+<div class="screen" id="screen1">
+  <form action="action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
 
-<form action="action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+      <button onclick="showScreen2()" type="submit">Login</button>
+<script type="text/javascript">
+    function showScreen2() {
+          $(".screen").hide();
+          $("#screen2").show();
+          $(".menu").removeClass("active");
+          $(".menu").eq(1).addClass("active"); // eq(1) = 2nd menu item
+        }
+</script>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-<main id="main">
-   <title>GoSchool</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-  <div id="header">GoSchool
-  </div>
-  <div id="body">
-    <div id="profile">
-      <h1>Profile</h1>
-      <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
-      <h2>PersonName</h2>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-      <h2>Synchronize UVA-SIS Classes
-        <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
-      </h2>
     </div>
-    <div id="message-panel">
-      <h1>Messages</h1>
-      <div id="message-number">
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-        <div id="message">
-          <h2>PersonName</h2>
-          <p>LastText</p>
-          <hr class="line" />
-        </div>
-      </div>
-      <div id="message-number">
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-        <div id="message">
-          <h2>PersonName</h2>
-          <p>LastText</p>
-          <hr class="line" />
-        </div>
-      </div>
-      <div id="message-number">
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-        <div id="message">
-          <h2>PersonName</h2>
-          <p>LastText</p>
-          <hr class="line" />
-        </div>
-      </div>
-      <div id="message-number">
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-        <div id="message">
-          <h2>PersonName</h2>
-          <p>LastText</p>
-          <hr class="line" />
-        </div>
-      </div>
-      <div id="message-number">
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-        <div id="message">
-          <h2>PersonName</h2>
-          <p>LastText</p>
-          <hr class="line" />
-        </div>
-      </div>
+
+    <div class="container" style="background-color:#f1f1f1">
     </div>
-    <div id="voice-channels">
-      <h1>Voice Channels</h1>
+  </form>
+
+</div>
+
+<div class="screen" id="screen2">
+<main id="main">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <div id="header">GoSchool
     </div>
+    <div id="body">
+      <div id="profile">
+        <h1>Profile</h1>
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
+        <h2>PersonName</h2>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <h2>Synchronize UVA-SIS Classes
+          <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
+        </h2>
+      </div>
+      <div id="message-panel">
+        <h1>Messages</h1>
+        <div id="message-number">
+          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+          <div id="message">
+            <h2>PersonName</h2>
+            <p>LastText</p>
+            <hr class="line" />
+          </div>
+        </div>
+        <div id="message-number">
+          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+          <div id="message">
+            <h2>PersonName</h2>
+            <p>LastText</p>
+            <hr class="line" />
+          </div>
+        </div>
+        <div id="message-number">
+          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+          <div id="message">
+            <h2>PersonName</h2>
+            <p>LastText</p>
+            <hr class="line" />
+          </div>
+        </div>
+        <div id="message-number">
+          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+          <div id="message">
+            <h2>PersonName</h2>
+            <p>LastText</p>
+            <hr class="line" />
+          </div>
+        </div>
+        <div id="message-number">
+          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+          <div id="message">
+            <h2>PersonName</h2>
+            <p>LastText</p>
+            <hr class="line" />
+          </div>
+        </div>
+      </div>
+      <div id="voice-channels">
+        <h1>Voice Channels</h1>
+      </div>
+      </body>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particle-api-js/7.3.0/particle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     </body>
-    <main>
+
+</html>
