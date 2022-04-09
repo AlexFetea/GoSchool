@@ -63,7 +63,6 @@
       display: block;
       float: none;
     }
-
   }
 
   #header {
@@ -214,17 +213,16 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input id="myInput" type="text" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input id="myInput" type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>
 
-      <button onclick="showScreen2()" >Login</button>
+      <button onclick="showScreen2()">Login</button>
       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
       <script type="text/javascript">
         function showScreen2() {
           var inputVal = document.getElementById("myInput").value;
-
           $(".screen").hide();
           $("#screen2").show();
           $(".menu").removeClass("active");
