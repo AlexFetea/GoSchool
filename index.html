@@ -1,312 +1,200 @@
-<!DOCTYPE html>
 <style>
-  * {
-    box-sizing: border-box;
-    /* use traditional box model sizing */
-  }
+  html{
+  font-size=15px;
+}
 
-  /* hide other screens when app first starts */
-  #screen2 {
-    display: none;
-  }
+#header{
+  font-family: monospace;
+  font-size: 50px;
+  font-style: italic;
+  padding: 30px;
+  text-align: center;
+  background: hsl(0 0% 5%);
+  color: white
+}
+#body{
+  display: flex;
+}
+#profile{
+  display: flex;
+  flex-direction: column;
+  background: rgb(141 216 211);
+  height: 100%;
+  width: 20%;
+  text-align:center;
+  padding-top: 10px;
+}
+h1{
+  font-size: 30px;
+  font-family: monospace;
+  margin: 0px auto 0px auto;
+}
+#profile-pic{
+  height: auto;
+  width: 50%;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 1rem;
+}
 
-  form {
-    border: 3px solid #f1f1f1;
-  }
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+  margin: auto;
+  margin-top: 20px;
+}
 
-  /* Full-width inputs */
-  input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
 
-  /* Set a style for all buttons */
-  button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
 
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
+input:checked + .slider {
+  background-color: green;
+}
 
-  /* Center the avatar image inside this container */
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
 
-  /* Avatar image */
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
+input:checked + .slider:before {
+  -webkit-transform: translateX(66px);
+  -ms-transform: translateX(66px);
+  transform: translateX(66px);
+}
 
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
+.slider.round {
+  border-radius: 34px;
+}
 
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-  }
+.slider.round:before {
+  border-radius: 50%;
+}
 
-  #header {
-    font-family: monospace;
-    font-size: 50px;
-    font-style: italic;
-    padding: 30px;
-    text-align: center;
-    background: hsl(0 0% 5%);
-    color: white
-  }
+#message-panel{
+  padding-top: 10px;
+  background: rgb(245, 245, 220);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+#message-number{
+  display: flex;
+  margin-bottom: 20px;
+}
+#message{
+  width: 90%;
+}
+#person-pic{
+  padding: auto;
+  padding: 10px;
+  width: 10%;
+  height: auto;
+  border-radius: 100%;
+}
 
-  #body {
-    display: flex;
-  }
-
-  #profile {
-    display: flex;
-    flex-direction: column;
-    background: rgb(141 216 211);
-    height: 100%;
-    width: 20%;
-    text-align: center;
-    padding-top: 10px;
-  }
-
-  h1 {
-    font-size: 30px;
-    font-family: monospace;
-    margin: 0px auto 0px auto;
-  }
-
-  #profile-pic {
-    height: auto;
-    width: 50%;
-    border-radius: 100%;
-    margin: auto;
-    margin-top: 1rem;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 34px;
-    margin: auto;
-    margin-top: 20px;
-  }
-
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked+.slider {
-    background-color: green;
-  }
-
-  input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-
-  input:checked+.slider:before {
-    -webkit-transform: translateX(66px);
-    -ms-transform: translateX(66px);
-    transform: translateX(66px);
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  #message-panel {
-    padding-top: 10px;
-    background: rgb(245, 245, 220);
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #message-number {
-    display: flex;
-    margin-bottom: 20px;
-  }
-
-  #message {
-    width: 90%;
-  }
-
-  #person-pic {
-    padding: auto;
-    padding: 10px;
-    width: 10%;
-    height: auto;
-    border-radius: 100%;
-  }
-
-  .line {
-    border: 1px solid gray;
-    background: gray;
-  }
-
-  #voice-channels {
-    padding-top: 10px;
-    background: rgb(141 216 211);
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-  }
+.line{
+  border: 1px solid gray;
+  background: gray;
+}
+#voice-channels{
+  padding-top: 10px;
+  background: rgb(141 216 211);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
 </style>
 
-<html>
-<title>GoSchool</title>
-<div class="screen" id="screen1">
-  <form>
-    <div class="imgcontainer">
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+<main id="main">
+   <title>GoSchool</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <div id="header">GoSchool
+  </div>
+  <div id="body">
+    <div id="profile">
+      <h1>Profile</h1>
+      <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
+      <h2>PersonName</h2>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <h2>Synchronize UVA-SIS Classes
+        <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
+      </h2>
     </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input id="myInput" type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button onclick="showScreen2()">Login</button>
-      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-      <script type="text/javascript">
-        function showScreen2() {
-          var inputVal = document.getElementById("myInput").value;
-          $(".screen").hide();
-          $("#screen2").show();
-          $(".menu").removeClass("active");
-          $(".menu").eq(1).addClass("active"); // eq(1) = 2nd menu item
-          $("#user-profile").text(inputVal);
-        }
-      </script>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-    </div>
-  </form>
-</div>
-<div class="screen" id="screen2">
-  <main id="main">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <div id="header">GoSchool
-    </div>
-    <div id="body">
-      <div id="profile">
-        <h1>Profile</h1>
-        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="profile-pic" />
-        <h2 id="user-profile">PersonName</h2>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-        <h2>Synchronize UVA-SIS Classes
-          <a href="https://in.virginia.edu/sis" id="sis-link">Here</a>!
-        </h2>
-      </div>
-      <div id="message-panel">
-        <h1>Messages</h1>
-        <div id="message-number">
-          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-          <div id="message">
-            <h2>PersonName</h2>
-            <p>LastText</p>
-            <hr class="line" />
-          </div>
-        </div>
-        <div id="message-number">
-          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-          <div id="message">
-            <h2>PersonName</h2>
-            <p>LastText</p>
-            <hr class="line" />
-          </div>
-        </div>
-        <div id="message-number">
-          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-          <div id="message">
-            <h2>PersonName</h2>
-            <p>LastText</p>
-            <hr class="line" />
-          </div>
-        </div>
-        <div id="message-number">
-          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-          <div id="message">
-            <h2>PersonName</h2>
-            <p>LastText</p>
-            <hr class="line" />
-          </div>
-        </div>
-        <div id="message-number">
-          <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
-          <div id="message">
-            <h2>PersonName</h2>
-            <p>LastText</p>
-            <hr class="line" />
-          </div>
+    <div id="message-panel">
+      <h1>Messages</h1>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
         </div>
       </div>
-      <div id="voice-channels">
-        <h1>Voice Channels</h1>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
       </div>
-      </body>
-  </main>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particle-api-js/7.3.0/particle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="script.js"></script>
-</body>
-
-</html>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+      <div id="message-number">
+        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="Profile Picture" id="person-pic" />
+        <div id="message">
+          <h2>PersonName</h2>
+          <p>LastText</p>
+          <hr class="line" />
+        </div>
+      </div>
+    </div>
+    <div id="voice-channels">
+      <h1>Voice Channels</h1>
+    </div>
+    </body>
+    <main>
